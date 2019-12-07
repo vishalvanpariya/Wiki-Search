@@ -6,10 +6,10 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-interface APICall {
+public interface APICall {
 
     @GET("/w/api.php")
-    Call<MainDataClass> getData(@Query("action") String action,
+    Call<MainDataClass> getResult(@Query("action") String action,
                                 @Query("format") String format,
                                 @Query("prop") String prop,
                                 @Query("generator") String generator,
