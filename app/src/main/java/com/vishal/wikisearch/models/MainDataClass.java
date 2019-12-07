@@ -2,7 +2,6 @@ package com.vishal.wikisearch.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class MainDataClass {
@@ -11,6 +10,9 @@ public class MainDataClass {
 
     @SerializedName("continue")
     Continue aContinue;
+
+    @SerializedName("query")
+    Query query;
 
     public MainDataClass(boolean batchcomplete, Continue aContinue) {
         this.batchcomplete = batchcomplete;
@@ -156,7 +158,6 @@ class Page{
         this.terms = terms;
     }
 }
-
 
 class Thumbnail{
     @SerializedName("source")
