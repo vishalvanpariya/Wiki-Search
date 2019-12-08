@@ -1,21 +1,20 @@
 package com.vishal.wikisearch.database;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
 import com.vishal.wikisearch.models.Page;
+import com.vishal.wikisearch.models.Terms;
 
 import java.util.List;
 
 @Dao
-public interface DBTable {
+public interface TermsTable {
     @Insert
-    void insertdata(Page page);
+    void insertterms(Terms terms);
 
-    @Query("SELECT * FROM Page")
-    LiveData<List<Page>> getdata();
+    @Query("SELECT * FROM TERMS where parentkey=:id limit 1")
+    LiveData<Terms> getterms(int id);
 }
-
