@@ -1,8 +1,17 @@
 package com.vishal.wikisearch.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 public class Page {
+
+
+    @PrimaryKey
     @SerializedName("pageid")
     int pageid;
 
@@ -15,11 +24,21 @@ public class Page {
     @SerializedName("index")
     String index;
 
+    @Ignore
     @SerializedName("thumbnail")
-    Thumbnail thumbnail;
+    Thumbnail thumbnail=null;
 
+    @Ignore
     @SerializedName("terms")
     Terms terms;
+
+
+    public Page(int pageid, int ns, String title, String index) {
+        this.pageid = pageid;
+        this.ns = ns;
+        this.title = title;
+        this.index = index;
+    }
 
     public Page(int pageid, int ns, String title, String index, Thumbnail thumbnail, Terms terms) {
         this.pageid = pageid;

@@ -2,21 +2,22 @@ package com.vishal.wikisearch.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Query {
     @SerializedName("pages")
-    List<Page> pages;
+    LinkedList<Page> pages;
 
-    public Query(List<Page> pages) {
+    public Query(LinkedList<Page> pages) {
         this.pages = pages;
     }
 
-    public List<Page> getPages() {
+    public LinkedList<Page> getPages() {
         return pages;
     }
 
-    public void setPages(List<Page> pages) {
+    public void setPages(LinkedList<Page> pages) {
         this.pages = pages;
     }
 }
